@@ -1,0 +1,55 @@
+# Global ignores
+.DS_Store
+Thumbs.db
+*.log
+*.env
+
+# Node.js (Frontend)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.eslintcache
+frontend/package-lock.json
+frontend/yarn.lock
+# Python (Backend)
+backend/.venv/
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Docker
+*.env
+docker-compose.override.yml
+backend/.env
+frontend/.env
+
+# OS-specific
+# macOS
+*.DS_Store
+# Windows
+Thumbs.db
+*.bak
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Testing outputs
+coverage/
+.nox/
+pytest_cache/
+htmlcov/
+
+# Linting
+*.cache
