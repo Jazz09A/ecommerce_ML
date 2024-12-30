@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { useCart } from '../context/CartContext'
-import Button from "@/components/ui/Button"
+import {Button} from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input"
 import { Minus, Plus, Trash2 } from 'lucide-react'
 

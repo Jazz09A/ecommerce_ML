@@ -2,45 +2,45 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { User } from 'lucide-react'
+import { ShoppingCart, User } from 'lucide-react'
+import { Button } from './ui/Button'
 import { CartModal } from './CartModal'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex">
-            <Link href="/" className="flex-shrink-0 flex items-center">
-              Mi Tienda
-            </Link>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <Link href="/" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                Inicio
-              </Link>
-              <Link href="/productos" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                Productos
-              </Link>
-              <Link href="/sobre-nosotros" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                Sobre Nosotros
-              </Link>
-            </div>
-          </div>
-          <div className="hidden sm:ml-6 sm:flex sm:items-center">
-            <CartModal />
-            <div className="ml-3 relative">
+    <header className="sticky top-0 z-50 w-full border-b bg-background">
+      <div className="container flex h-16 items-center">
+        <div className="mr-8 ml-8 hidden md:flex">
+          <Link href="/" className="text-lg font-semibold">
+            Mi Tienda
+          </Link>
+        </div>
+        <nav className="flex items-center space-x-6 text-sm font-medium">
+          <Link href="/" className="transition-colors hover:text-foreground/80">
+            Inicio
+          </Link>
+          <Link href="/productos" className="transition-colors hover:text-foreground/80">
+            Productos
+          </Link>
+          <Link href="/sobre-nosotros" className="transition-colors hover:text-foreground/80">
+            Sobre Nosotros
+          </Link>
+        </nav>
+        <div className="ml-auto flex items-center space-x-4">
+        <CartModal />
+            <div className="mr-4 relative">
               <div>
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className=" mt-4 bg-white rounded-full ring-indigo-600 flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   id="user-menu"
                   aria-expanded="false"
                   aria-haspopup="true"
                 >
                   <span className="sr-only">Abrir menú de usuario</span>
-                  <User className="h-8 w-8 rounded-full" />
+                  <User className="h-5 w-5 rounded-full" />
                 </button>
               </div>
               {isMenuOpen && (
@@ -51,9 +51,8 @@ export default function Navbar() {
               )}
             </div>
           </div>
-        </div>
       </div>
-    </nav>
+    </header>
   )
 }
 
