@@ -5,8 +5,8 @@ import { useCart } from '../context/CartContext'
 import { Cart } from './Cart'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { ShoppingCart } from 'lucide-react'
-import Button from "@/components/ui/Button"
-import classNames from 'classnames'
+import {Button} from "@/components/ui/Button"
+
 
 
 export const CartModal: React.FC = () => {
@@ -14,9 +14,11 @@ export const CartModal: React.FC = () => {
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0)
 
   return (
+    <div className='flex mt-4'>
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className="relative">
+        <div className="relative">
+        <Button variant="outline">
           <ShoppingCart className="h-5 w-5 mr-2" />
           Carrito
           {itemCount > 0 && (
@@ -25,14 +27,17 @@ export const CartModal: React.FC = () => {
             </span>
           )}
         </Button>
+
+        </div>
       </DialogTrigger>
-      <DialogContent>
+      {/* <DialogContent>
         <DialogHeader>
           <DialogTitle>Tu Carrito</DialogTitle>
         </DialogHeader>
         <Cart />
-      </DialogContent>
+      </DialogContent> */}
     </Dialog>
+    </div>
   )
 }
 
