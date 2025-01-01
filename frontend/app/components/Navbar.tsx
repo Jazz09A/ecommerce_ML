@@ -17,7 +17,7 @@ export default function Navbar() {
             Mi Tienda
           </Link>
         </div>
-        <nav className="flex items-center space-x-6 text-sm font-medium">
+        <nav className="flex items-center ml-2 space-x-6 text-sm font-medium">
           <Link href="/" className="transition-colors hover:text-foreground/80">
             Inicio
           </Link>
@@ -30,17 +30,17 @@ export default function Navbar() {
         </nav>
         <div className="ml-auto flex items-center space-x-4">
         <CartModal />
-            <div className="mr-4 relative">
+            <div className="mr-2  relative">
               <div>
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className=" mt-4 bg-white rounded-full ring-indigo-600 flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className=" mt-2 bg-white rounded-full ring-indigo-600 flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   id="user-menu"
                   aria-expanded="false"
                   aria-haspopup="true"
                 >
                   <span className="sr-only">Abrir menú de usuario</span>
-                  <User className="h-5 w-5 rounded-full" />
+                  <User className="h-5 w-5 mt-2 rounded-full" />
                 </button>
               </div>
               {isMenuOpen && (
