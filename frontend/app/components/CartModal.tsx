@@ -14,7 +14,7 @@ export const CartModal: React.FC = () => {
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0)
 
   return (
-    <div className='flex mt-4'>
+    <div className='flex mt-2'>
     <Dialog>
       <DialogTrigger asChild>
         <div className="relative">
